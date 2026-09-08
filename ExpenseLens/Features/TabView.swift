@@ -19,7 +19,7 @@ struct TabView: View {
             Tab(.budget, systemImage: "creditcard") {
                 BudgetView()
             }
-            Tab(.more, systemImage: "ellipsis") {
+            Tab(.settings, systemImage: "gear") {
             }
         }
     }

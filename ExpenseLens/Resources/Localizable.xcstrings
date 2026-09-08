@@ -314,6 +314,17 @@
         }
       }
     },
+    "settings" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "الإعدادات"
+          }
+        }
+      }
+    },
     "Shopping" : {
       "extractionState" : "manual",
       "localizations" : {
