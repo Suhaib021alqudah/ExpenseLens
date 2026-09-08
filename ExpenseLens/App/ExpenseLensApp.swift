@@ -25,7 +25,7 @@ struct ExpenseLensApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            TabView()
         }
         .modelContainer(sharedModelContainer)
     }

@@ -6,13 +6,52 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXCopyFilesBuildPhase section */
+		EC9EB8273050035300E6F5DD /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		ECDB7D45304B6F06007258F0 /* ExpenseLens.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ExpenseLens.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		ECDB7D60304B769A007258F0 /* Exceptions for "ExpenseLens" folder in "ExpenseLens" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				DesignSystem/Colors.swift,
+				Features/Dashboard/Model/FakeTransactionRepository.Swift,
+			);
+			target = ECDB7D44304B6F06007258F0 /* ExpenseLens */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
+/* Begin PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet section */
+		ECDB7D61304B769A007258F0 /* Exceptions for "ExpenseLens" folder in "Copy Bundle Resources" phase from "ExpenseLens" target */ = {
+			isa = PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet;
+			buildPhase = ECDB7D43304B6F06007258F0 /* Resources */;
+			membershipExceptions = (
+				DesignSystem/Colors.swift,
+				Features/Dashboard/Model/FakeTransactionRepository.Swift,
+			);
+		};
+/* End PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		ECDB7D47304B6F06007258F0 /* ExpenseLens */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				ECDB7D60304B769A007258F0 /* Exceptions for "ExpenseLens" folder in "ExpenseLens" target */,
+				ECDB7D61304B769A007258F0 /* Exceptions for "ExpenseLens" folder in "Copy Bundle Resources" phase from "ExpenseLens" target */,
+			);
 			path = ExpenseLens;
 			sourceTree = "<group>";
 		};
@@ -55,6 +94,7 @@
 				ECDB7D41304B6F06007258F0 /* Sources */,
 				ECDB7D42304B6F06007258F0 /* Frameworks */,
 				ECDB7D43304B6F06007258F0 /* Resources */,
+				EC9EB8273050035300E6F5DD /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -91,6 +131,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ar,
 			);
 			mainGroup = ECDB7D3C304B6F06007258F0;
 			minimizedProjectReferenceProxies = 1;
@@ -184,6 +225,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -240,6 +282,7 @@
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_EMIT_LOC_STRINGS = YES;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
