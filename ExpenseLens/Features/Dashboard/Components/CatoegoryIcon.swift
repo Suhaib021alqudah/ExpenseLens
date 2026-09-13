@@ -7,18 +7,19 @@
 
 import SwiftUI
 
-struct CatoegoryIcon: View {
+struct CatoegoryIcon: View  {
+    
+    let transaction : Transaction
+    
+   
     var body: some View {
-        Image(systemName: "basket")
-            .foregroundStyle(.pinkForeground)
-            .frame(width: 34, height: 34)
+        Image(systemName: transaction.category.iconName)
+            .foregroundStyle(transaction.category.iconColor)
+            .frame(width: 42, height: 42)
             .background(
                 RoundedRectangle(cornerRadius: 10)
-                    .fill(.pinkBackground)
+                    .fill(transaction.category.backgroundColor)
             )
     }
 }
 
-#Preview {
-    CatoegoryIcon()
-}

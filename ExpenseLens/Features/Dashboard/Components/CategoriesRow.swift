@@ -10,8 +10,8 @@ import SwiftUI
 struct CategoriesRow: View {
     let categoryProgressList: [CategoryProgress]
 
-    @State private var selectedId: UUID?
-
+    
+     @State private var selectedId: UUID?
     var body: some View {
         VStack(alignment: .leading) {
             ScrollView(.horizontal, showsIndicators: false) {
@@ -84,7 +84,7 @@ enum AppCategories {
         titleColor: .yellowForeground,
         iconBackgroundColor: .yellowBackground,
         foregroundColor: .yellowForeground
-        
+
     )
 
     static let transport = CategoryItem(
@@ -111,4 +111,7 @@ enum AppCategories {
         foregroundColor: .redForeground
 
     )
+
+
+  
 }

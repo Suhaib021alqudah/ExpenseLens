@@ -28,7 +28,6 @@
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				DesignSystem/Colors.swift,
-				Features/Dashboard/Model/FakeTransactionRepository.Swift,
 			);
 			target = ECDB7D44304B6F06007258F0 /* ExpenseLens */;
 		};
@@ -40,7 +39,6 @@
 			buildPhase = ECDB7D43304B6F06007258F0 /* Resources */;
 			membershipExceptions = (
 				DesignSystem/Colors.swift,
-				Features/Dashboard/Model/FakeTransactionRepository.Swift,
 			);
 		};
 /* End PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet section */
