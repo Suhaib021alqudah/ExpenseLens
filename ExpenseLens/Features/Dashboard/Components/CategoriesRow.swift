@@ -14,17 +14,16 @@ struct CategoriesRow: View {
      @State private var selectedId: UUID?
     var body: some View {
         VStack(alignment: .leading) {
+            
             ScrollView(.horizontal, showsIndicators: false) {
+                
                 LazyHStack(spacing: 12) {
                     ForEach(categoryProgressList) { item in
-                        CategoryCard(
-                            item: item,
-
-                            isSelected: selectedId == item.id
-                        )
+                        CategoryCard(item: item,isSelected: selectedId == item.id)
                         .onTapGesture {
-                            withAnimation(.snappy) {
+                            withAnimation(.bouncy) {
                                 selectedId = item.id
+                                print("hi")
                             }
                         }
                     }

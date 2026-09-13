@@ -16,10 +16,7 @@ struct CatoegoryIcon: View  {
         Image(systemName: transaction.category.iconName)
             .foregroundStyle(transaction.category.iconColor)
             .frame(width: 42, height: 42)
-            .background(
-                RoundedRectangle(cornerRadius: 10)
-                    .fill(transaction.category.backgroundColor)
-            )
+            .background(RoundedRectangle(cornerRadius: 10).fill(transaction.category.backgroundColor))
     }
 }
 

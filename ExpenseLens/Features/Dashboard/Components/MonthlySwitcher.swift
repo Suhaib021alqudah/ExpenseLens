@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import Foundation
 
 struct MonthSwitcherView: View {
     @Binding var selectedDate: Date
@@ -35,29 +34,32 @@ struct MonthSwitcherView: View {
                     .font(.system(size: 16, weight: .medium))
                     .foregroundStyle(.teal700)
             }
+            
             .frame(width: 44, height: 44)
-        }.environment(\.layoutDirection, .leftToRight)
-            .padding(.horizontal, 28)
-            .frame(maxWidth: .infinity)
-            .frame(height: 80)
+            
+        }
+        .environment(\.layoutDirection, .leftToRight)
+        .padding(.horizontal, 28)
+        .frame(maxWidth: .infinity)
+        .frame(height: 80)
 
     }
-    
-    private var formattedMonth: String {
-           selectedDate.formatted(
-               Date.FormatStyle()
-                   .month(.abbreviated)
-                   .year()
-           )
-       }
 
-       private func changeMonth(by value: Int) {
-           if let newDate = Calendar.current.date(
-               byAdding: .month,
-               value: value,
-               to: selectedDate
-           ) {
-               selectedDate = newDate
-           }
-       }
+    private var formattedMonth: String {
+        selectedDate.formatted(
+            Date.FormatStyle()
+                .month(.abbreviated)
+                .year()
+        )
+    }
+
+    private func changeMonth(by value: Int) {
+        if let newDate = Calendar.current.date(
+            byAdding: .month,
+            value: value,
+            to: selectedDate
+        ) {
+            selectedDate = newDate
+        }
+    }
 }

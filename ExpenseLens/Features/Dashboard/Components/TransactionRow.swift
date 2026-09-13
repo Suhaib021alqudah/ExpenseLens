@@ -12,7 +12,7 @@ struct TransactionRow: View {
     let transaction: Transaction
 
     var body: some View {
-        HStack (spacing: 12){
+        HStack(spacing: 12) {
             CatoegoryIcon(transaction: transaction)
             VStack(alignment: .leading) {
 
@@ -30,9 +30,7 @@ struct TransactionRow: View {
                 transaction.type == .income
                     ? " +\(transaction.amount)$" : " -\(transaction.amount)$"
             )
-            .foregroundStyle(
-                transaction.type == .income ? .teal700 : .redForeground
-            )
+            .foregroundStyle(transaction.type == .income ? .teal700 : .redForeground)
             .font(AppTypography.buttonTitle)
 
         }
@@ -44,9 +42,9 @@ struct TransactionRow: View {
 
     TransactionRow(
         transaction: Transaction(
-            title:"Zara",
+            title: "Zara",
             amount: 983.34,
-            date: Date() ,
+            date: Date(),
             type: .expense,
             category: .bills,
             note: "Unessecry Purshae"

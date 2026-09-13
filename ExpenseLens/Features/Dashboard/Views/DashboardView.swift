@@ -15,11 +15,8 @@ struct DashboardView: View {
     init()
     {_viewModel = State(initialValue: DashboardViewModel(repository: FakeFinanceRepository()))}
     
-    let progress: Double = 0.9
-    let amount: Int = 856
-    let budget: Double = 1050
-    let avilableAmount: Double = 200.5
-    @State private var selectedDate = Date()
+    
+   @State private var selectedDate = Date()
     
     
     
@@ -27,6 +24,27 @@ struct DashboardView: View {
 
     var body: some View {
         
+        //MARK: Local Binding
+        
+        /*
+         Local bindable lets us create bindings like $viewModel.selectedDate.
+
+         @State keeps ownership of the DashboardViewModel inside the View.
+
+         @Bindable does NOT create another ViewModel.
+         It wraps the same observable object so we can create two-way bindings
+         to its properties, such as selectedDate.
+         
+         viewModel.selectedDate
+         // value
+
+         $viewModel.selectedDate
+         // binding to that value
+         
+        */
+        
+        @Bindable var viewModel = viewModel
+
         NavigationStack {
             ZStack(alignment: .bottomTrailing) {
 
@@ -34,7 +52,7 @@ struct DashboardView: View {
                 ScrollView(.vertical) {
                     VStack(alignment: .leading) {
 
-                        header
+                        headeSection
                         monthlyTrackerSection
                         categoriesSection
                         recentTransactionsSection
@@ -64,8 +82,9 @@ struct DashboardView: View {
 }
 
 //MARK: - Header
+
 extension DashboardView {
-    private var header: some View {
+    private var headeSection: some View {
         VStack(alignment: .leading) {
             Text(.goodMorning)
                 .font(AppTypography.caption)
@@ -103,12 +122,13 @@ extension DashboardView {
         }
     }
 }
+
 //MARK: - MonthlyTracker {
 
 extension DashboardView {
     private var monthlyTrackerSection: some View {
         VStack {
-            MonthSwitcherView(selectedDate: $selectedDate)
+            MonthSwitcherView(selectedDate: $viewModel.selectedDate)
             monthlyBudgetSection
 
         }
@@ -120,27 +140,27 @@ extension DashboardView {
 extension DashboardView {
     private var monthlyBudgetSection: some View {
         HStack(spacing: 16) {
-            CircularProgress(progress: progress)
+            CircularProgress(progress: viewModel.budgetProgress)
             VStack(alignment: .leading) {
                 Text(.monthlyBudget)
                     .font(AppTypography.sectionLabel)
                     .foregroundStyle(.textSecondary)
-                Text(amount, format: .currency(code: "USD"))
+                Text(viewModel.monthlyExpenses, format: .currency(code: "USD"))
                     .font(AppTypography.cardAmountValue)
                     .padding(
                         .top,
                         10
                     )
-                Text(.of$Budget(amount))
-                    .font(.system(size: 10, weight: .medium))
-                    .foregroundStyle(.textSecondary).padding(
-                        .top,
-                        2
-                    )
-                BudgetProgressBar(progress: progress)
+                Text(.of$Budget(NSDecimalNumber(decimal: viewModel.monthlyBudget).intValue))
+                
+                BudgetProgressBar(progress: viewModel.budgetProgress)
                     .frame(width: 152)
                 Text(
-                    .remaining("$\(avilableAmount)")
+                    .remaining(
+                        viewModel.remainingBudget.formatted(
+                            .currency(code: "USD")
+                        )
+                    )
                 )
                 .font(AppTypography.caption)
                 .foregroundStyle(.teal600).padding(.top, 2)
@@ -173,8 +193,7 @@ extension DashboardView {
             CategoriesRow(
 
                 categoryProgressList:
-                    CategoryProgress.mockData
-
+                    viewModel.categoryProgressList
             )
         }
     }
@@ -196,18 +215,17 @@ extension DashboardView {
             }.padding(.vertical, 10)
 
             List {
-                ForEach(viewModel.transactions) { transaction in
+                ForEach(viewModel.filteredTransactions) { transaction in
                     TransactionRow(transaction: transaction)
                         .listRowBackground(Color(.whiteBackground))
                 }
 
             }
+            .scrollDisabled(true)
             .scrollIndicators(.hidden)
             .frame(height: 392)
             .listStyle(.plain)
-            .clipShape(
-                RoundedRectangle(cornerRadius: 20)
-            )
+            .clipShape(RoundedRectangle(cornerRadius: 20))
         }
     }
 }

@@ -20,10 +20,7 @@ struct CircularProgress: View {
 
             Circle()
                 .trim(from: 0, to: progress)
-                .stroke(
-                    Color.teal600,
-                    style: StrokeStyle(lineWidth: 12, lineCap: .round)
-                )
+                .stroke(Color.teal600,style: StrokeStyle(lineWidth: 12, lineCap: .round))
                 .rotationEffect(.degrees(-90))
 
             VStack(spacing: 4) {

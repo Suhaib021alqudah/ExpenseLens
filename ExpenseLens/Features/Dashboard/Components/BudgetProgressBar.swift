@@ -25,7 +25,7 @@ struct BudgetProgressBar: View {
 }
 
 #Preview {
-    BudgetProgressBar(progress: 0.5)
+    BudgetProgressBar(progress: 0.21)
         .padding()
 }
 

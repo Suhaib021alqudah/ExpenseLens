@@ -14,7 +14,7 @@ final class FakeFinanceRepository: FinanceRepository {
         Transaction(
             title: "Starbucks",
             amount: 6.75,
-            date: .now,
+            date: Calendar.current.date(byAdding: .month, value:-1, to: .now)!,
             type: .expense,
             category: .food,
             note: "Morning Coffee"
@@ -23,16 +23,31 @@ final class FakeFinanceRepository: FinanceRepository {
         Transaction(
             title: "Uber",
             amount: 14.30,
-            date: .now,
+            date: Calendar.current.date(byAdding: .month, value:-1, to: .now)!,
             type: .expense,
             category: .transport,
             note: "Ride to work"
         ),
-
+        Transaction(
+            title: "Uber",
+            amount: 550,
+            date: Calendar.current.date(byAdding: .month, value:-1, to: .now)!,
+            type: .expense,
+            category: .transport,
+            note: "Ride to work"
+        ),
+        Transaction(
+            title: "Uber",
+            amount: 550,
+            date: Calendar.current.date(byAdding: .month, value:-1, to: .now)!,
+            type: .expense,
+            category: .transport,
+            note: "Ride to work"
+        ),
         Transaction(
             title: "Zara",
             amount: 89.99,
-            date: .now,
+            date: Calendar.current.date(byAdding: .month, value:-1, to: .now)!,
             type: .expense,
             category: .shopping,
             note: "New clothes"
@@ -73,11 +88,98 @@ final class FakeFinanceRepository: FinanceRepository {
             category: .subscriptions,
             note: "Monthly subscription"
         ),
+        
+        Transaction(
+            title: "Netflix",
+            amount: 9.99,
+            date: .now,
+            type: .expense,
+            category: .subscriptions,
+            note: "Monthly subscription"
+        ),
+        
+        
+        Transaction(
+            title: "Netflix",
+            amount: 9.99,
+            date: .now,
+            type: .expense,
+            category: .subscriptions,
+            note: "Monthly subscription"
+        ),
+        
+        Transaction(
+            title: "Netflix",
+            amount: 9.99,
+            date: .now,
+            type: .expense,
+            category: .subscriptions,
+            note: "Monthly subscription"
+        ),
+        
+        Transaction(
+            title: "Netflix",
+            amount: 9.99,
+            date: .now,
+            type: .expense,
+            category: .subscriptions,
+            note: "Monthly subscription"
+        ),
+        
+        
+        Transaction(
+            title: "Netflix",
+            amount: 9.99,
+            date: .now,
+            type: .expense,
+            category: .subscriptions,
+            note: "Monthly subscription"
+        ),
+        
+        Transaction(
+            title: "Netflix",
+            amount: 9.99,
+            date: .now,
+            type: .expense,
+            category: .subscriptions,
+            note: "Monthly subscription"
+        ),
+        Transaction(
+            title: "Netflix",
+            amount: 9.99,
+            date: .now,
+            type: .expense,
+            category: .subscriptions,
+            note: "Monthly subscription"
+        ),
+        Transaction(
+            title: "Netflix",
+            amount: 9.99,
+            date: .now,
+            type: .expense,
+            category: .subscriptions,
+            note: "Monthly subscription"
+        ),    Transaction(
+            title: "Netflix",
+            amount: 9.99,
+            date: .now,
+            type: .expense,
+            category: .subscriptions,
+            note: "Monthly subscription"
+        ),
+        Transaction(
+            title: "Netflix",
+            amount: 9.99,
+            date: .now,
+            type: .expense,
+            category: .subscriptions,
+            note: "Monthly subscription"
+        ),
 
         Transaction(
             title: "Pharmacy",
             amount: 22.40,
-            date: .now,
+            date: Calendar.current.date(byAdding: .month, value:1, to: .now)!,
             type: .expense,
             category: .health,
             note: "Medicine"
@@ -86,7 +188,7 @@ final class FakeFinanceRepository: FinanceRepository {
         Transaction(
             title: "Apartment Rent",
             amount: 350.00,
-            date: .now,
+            date: Calendar.current.date(byAdding: .month, value:1, to: .now)!,
             type: .expense,
             category: .house,
             note: "Monthly rent"
@@ -95,7 +197,7 @@ final class FakeFinanceRepository: FinanceRepository {
         Transaction(
             title: "Online Course",
             amount: 45.00,
-            date: .now,
+            date: Calendar.current.date(byAdding: .month, value:1, to: .now)!,
             type: .expense,
             category: .education,
             note: "SwiftUI course"
@@ -135,10 +237,8 @@ final class FakeFinanceRepository: FinanceRepository {
     }
 
     func updateTransaction(_ transaction: Transaction) throws {
-        // later
     }
 
     func deleteTransaction(_ transaction: Transaction) throws {
-        // later
     }
 }

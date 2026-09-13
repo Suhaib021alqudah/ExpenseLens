@@ -6,7 +6,13 @@
 //
 
 import Foundation
-protocol TransactionRepositoryProtocol {
-    func fetchRecentTransactions(limit: Int) -> [Transaction]
-    func fetchTransactions(for month: Date) -> [Transaction]
+
+protocol CategoryRepositoryProtocol {
+    
+    func fetchAllCategories() -> [CategoryItem]
+    func updateBudget(for category: CategoryItem, newBudget: Double)
+    func fetchTotalBudget() -> Double
+    func fetchAutoCalculateEnabled() -> Bool
+    func setAutoCalculateEnabled(_ enabled: Bool)
+    
 }

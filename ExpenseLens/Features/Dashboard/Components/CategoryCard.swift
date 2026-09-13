@@ -17,8 +17,9 @@ struct CategoryCard: View {
                 .foregroundStyle(item.category.foregroundColor)
                 .frame(width: 34, height: 34)
                 .background(
-                    RoundedRectangle(cornerRadius: 10)
-                        .fill(item.category.iconBackgroundColor)
+                    RoundedRectangle(cornerRadius: 10).fill(
+                        item.category.iconBackgroundColor
+                    )
                 )
 
             Text(item.category.title)
@@ -26,15 +27,16 @@ struct CategoryCard: View {
                 .font(.system(size: 10, weight: .semibold))
                 .padding(.top, 6)
 
-            Text(item.percentage, format: .percent)
-                .font(.system(size: 10, weight: .bold))
-                .foregroundStyle(item.percentageColor)
+            Text(
+                item.percentage,
+                format: .percent.precision(.fractionLength(0))
+            )
+            .font(.system(size: 10, weight: .bold))
+            .foregroundStyle(item.percentageColor)
 
         }
         .frame(width: 70, height: 94)
-        .background(
-            RoundedRectangle(cornerRadius: 16).fill(.whiteBackground)
-        )
+        .background(RoundedRectangle(cornerRadius: 16).fill(.whiteBackground))
     }
 }
 

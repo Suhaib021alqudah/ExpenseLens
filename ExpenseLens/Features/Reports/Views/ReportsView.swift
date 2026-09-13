@@ -9,9 +9,15 @@ import SwiftUI
 
 struct ReportsView: View {
     var body: some View {
-        Text("ReportsView")
+        ZStack {
+            Color(.backgroundPrimary).ignoresSafeArea()
+                VStack {
+                    
+                }
+            }
+        }
     }
-}
+
 
 #Preview {
     ReportsView()

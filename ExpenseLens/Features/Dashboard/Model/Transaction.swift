@@ -23,7 +23,7 @@ enum TransactionType: String {
     case income = "Income"
 }
 
-enum TransactionCategory: String {
+enum TransactionCategory: String , CaseIterable{
     case shopping
     case food
     case transport
@@ -39,6 +39,16 @@ enum TransactionCategory: String {
 }
 
 extension TransactionCategory {
+
+    var categoryItem: CategoryItem {
+        CategoryItem(
+            iconName: iconName,
+            title: LocalizedStringResource(stringLiteral: rawValue.capitalized),
+            titleColor: iconColor,
+            iconBackgroundColor: backgroundColor,
+            foregroundColor: iconColor
+        )
+    }
 
     var iconName: String {
         switch self {
@@ -105,14 +115,14 @@ extension TransactionCategory {
             return .purpleForeground
         case .personalCare:
             return .pinkForeground
-        case .other :
+        case .other:
             return .greyForeground
 
         }
     }
 
     var backgroundColor: Color {
-        
+
         switch self {
 
         case .shopping:
@@ -140,7 +150,7 @@ extension TransactionCategory {
             return .purpleBackground
         case .personalCare:
             return .pinkBackground
-        case .other :
+        case .other:
             return .greyBackground
 
         }
