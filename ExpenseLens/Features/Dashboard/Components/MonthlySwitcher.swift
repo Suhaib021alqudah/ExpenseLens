@@ -20,8 +20,7 @@ struct MonthSwitcherView: View {
                     .font(.system(size: 16, weight: .medium))
                     .foregroundStyle(.teal700)
             }
-            .frame(width: 44, height: 44)
-
+            
             Text(formattedMonth)
                 .font(AppTypography.buttonTitle)
                 .foregroundStyle(.primary)
@@ -35,13 +34,12 @@ struct MonthSwitcherView: View {
                     .foregroundStyle(.teal700)
             }
             
-            .frame(width: 44, height: 44)
+            
             
         }
         .environment(\.layoutDirection, .leftToRight)
-        .padding(.horizontal, 28)
-        .frame(maxWidth: .infinity)
-        .frame(height: 80)
+        
+       
 
     }
 

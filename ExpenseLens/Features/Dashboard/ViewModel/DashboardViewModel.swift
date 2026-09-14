@@ -13,7 +13,6 @@ import Observation
 final class DashboardViewModel {
 
     //MARK: - Properties
-
     private let repository: FinanceRepository
     private(set) var transactions: [Transaction] = []
     private(set) var state: DashboardViewState = .idle
@@ -24,13 +23,10 @@ final class DashboardViewModel {
     }
 
     var filteredTransactions: [Transaction] {
-        transactions.filter { transaction in
-            Calendar.current.isDate(
-                transaction.date,
-                equalTo: selectedDate,
-                toGranularity: .month
-            )
-        }
+        TransactionAnalytics.transactions(
+            from: transactions,
+            for: selectedDate
+        )
     }
 
     //MARK: - Budget Properties
@@ -53,25 +49,20 @@ final class DashboardViewModel {
     //MARK: - Expense Properties
 
     var monthlyExpenses: Decimal {
-        filteredTransactions
-            .filter { $0.type == .expense }
-            .reduce(0) { $0 + $1.amount }
+        TransactionAnalytics.monthlyExpenses(from: filteredTransactions)
+
     }
+
     var expenses: [Transaction] {
-        filteredTransactions.filter {
-            $0.type == .expense
-        }
+        TransactionAnalytics.expenses(from: filteredTransactions)
     }
 
     var expensesByCategory: [TransactionCategory: Decimal] {
-        Dictionary(grouping: expenses, by: \.category)
-            .mapValues { transactions in
-                transactions.reduce(0) { $0 + $1.amount }
-            }
+        TransactionAnalytics.expensesByCategory(
+            from: filteredTransactions)
+
     }
 
-   
-    
     var categoryProgressList: [CategoryProgress] {
         TransactionCategory.allCases.map { category in
 

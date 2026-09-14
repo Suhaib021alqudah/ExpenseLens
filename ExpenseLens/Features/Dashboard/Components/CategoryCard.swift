@@ -35,7 +35,7 @@ struct CategoryCard: View {
             .foregroundStyle(item.percentageColor)
 
         }
-        .frame(width: 70, height: 94)
+        .frame(width: 74, height: 94)
         .background(RoundedRectangle(cornerRadius: 16).fill(.whiteBackground))
     }
 }

@@ -14,6 +14,8 @@ struct AddTransactionView: View {
 
             
         }
+        .toolbar(.hidden, for: .tabBar)
+
     }
 }
 

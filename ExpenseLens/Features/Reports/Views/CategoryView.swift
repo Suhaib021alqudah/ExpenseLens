@@ -2,16 +2,16 @@
 //  CategoryView.swift
 //  ExpenseLens
 //
-//  Created by Trainee on 06/09/2026.
+//  Created by Trainee on 14/09/2026.
 //
 
 import SwiftUI
 
 struct CategoryView: View {
-    var body: some View {
-    }
-}
+    let transactions: [Transaction]
 
-#Preview {
-    CategoryView()
+    var body: some View {
+        Text("CategoryView")
+        
+    }
 }

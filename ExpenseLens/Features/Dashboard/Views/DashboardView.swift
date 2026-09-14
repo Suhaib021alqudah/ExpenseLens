@@ -13,7 +13,9 @@ struct DashboardView: View {
 
     @State private var viewModel: DashboardViewModel
     init()
-    {_viewModel = State(initialValue: DashboardViewModel(repository: FakeFinanceRepository()))}
+    {
+        _viewModel = State(initialValue: DashboardViewModel(repository: FakeFinanceRepository()))
+    }
     
     
    @State private var selectedDate = Date()
@@ -67,7 +69,7 @@ struct DashboardView: View {
                 .scrollIndicators(.hidden)
 
                 addTransactionButton
-
+                
             }
 
         }
@@ -185,10 +187,8 @@ extension DashboardView {
                     .font(AppTypography.sectionLabel)
                     .foregroundStyle(.textSecondary)
                 Spacer()
-                NavigatorButton(
-                    text: .seeAll,
-                    destination: CategoryView()
-                )
+               
+                    
             }.padding(.top, 32)
             CategoriesRow(
 
@@ -208,10 +208,7 @@ extension DashboardView {
                     .font(AppTypography.sectionLabel)
                     .foregroundStyle(.textSecondary)
                 Spacer()
-                NavigatorButton(
-                    text: .seeAll,
-                    destination: CategoryView()
-                )
+                
             }.padding(.vertical, 10)
 
             List {
@@ -246,5 +243,6 @@ extension DashboardView {
         .background(RoundedRectangle(cornerRadius: 50).fill(LinearGradient.appIcon))
         .buttonStyle(.plain)
         .padding()
+        
     }
 }

@@ -8,6 +8,7 @@
 import Foundation
 
 protocol FinanceRepository {
+    
     func fetchTransactions() throws -> [Transaction]
     func addTransaction(_ transaction: Transaction) throws
     func updateTransaction(_ transaction: Transaction) throws
