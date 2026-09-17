@@ -23,7 +23,7 @@ enum TransactionType: String {
     case income = "Income"
 }
 
-enum TransactionCategory: String , CaseIterable{
+enum TransactionCategory: String, CaseIterable {
     case shopping
     case food
     case transport
@@ -36,6 +36,49 @@ enum TransactionCategory: String , CaseIterable{
     case subscriptions
     case personalCare
     case other
+}
+
+extension TransactionCategory {
+    var localizedTitle: LocalizedStringResource {
+        switch self {
+
+        case .shopping:
+            return .shopping
+
+        case .food:
+            return .food
+
+        case .transport:
+            return .transport
+
+        case .bills:
+            return .bills
+
+        case .health:
+            return .health
+
+        case .entertainment:
+            return .entertainment
+
+        case .house:
+            return .house
+
+        case .education:
+            return .education
+
+        case .travel:
+            return .travel
+
+        case .subscriptions:
+            return .subscriptions
+
+        case .personalCare:
+            return .personalcare
+
+        case .other:
+            return .other
+        }
+    }
 }
 
 extension TransactionCategory {
@@ -104,13 +147,13 @@ extension TransactionCategory {
             return .redForeground
 
         case .entertainment:
-            return .purpleForeground
+            return .entertainment
         case .house:
-            return .navyForeground
+            return .teal700
         case .education:
-            return .teal500
+            return .teal300
         case .travel:
-            return .yellowForeground
+            return .orange
         case .subscriptions:
             return .purpleForeground
         case .personalCare:
@@ -139,13 +182,13 @@ extension TransactionCategory {
             return .redBackground
 
         case .entertainment:
-            return .purpleBackground
+            return .entertainment
         case .house:
-            return .navyBackround
-        case .education:
             return .teal700
+        case .education:
+            return .teal300
         case .travel:
-            return .yellowBackground
+            return .orange
         case .subscriptions:
             return .purpleBackground
         case .personalCare:

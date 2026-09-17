@@ -16,9 +16,6 @@ struct TabView: View {
             Tab(.reports, systemImage: "chart.bar") {
                 ReportsView()
             }
-            Tab(.budget, systemImage: "creditcard") {
-                BudgetView()
-            }
             Tab(.settings, systemImage: "gear") {
             }
         }

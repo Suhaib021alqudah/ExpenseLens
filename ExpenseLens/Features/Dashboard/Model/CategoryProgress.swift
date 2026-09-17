@@ -8,7 +8,9 @@
 import SwiftUI
 
 struct CategoryProgress: Identifiable {
-    var id: UUID { category.id }
+    var id: TransactionCategory { transactionCategory }
+
+    let transactionCategory: TransactionCategory
     let category: CategoryItem
     let percentage: Double
     let percentageColor: Color

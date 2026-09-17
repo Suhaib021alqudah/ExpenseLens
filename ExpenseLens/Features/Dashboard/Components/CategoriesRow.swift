@@ -9,9 +9,8 @@ import SwiftUI
 
 struct CategoriesRow: View {
     let categoryProgressList: [CategoryProgress]
+    @State private var selectedCategory: TransactionCategory?
 
-    
-     @State private var selectedId: UUID?
     var body: some View {
         VStack(alignment: .leading) {
             
@@ -19,15 +18,16 @@ struct CategoriesRow: View {
                 
                 LazyHStack(spacing: 12) {
                     ForEach(categoryProgressList) { item in
-                        CategoryCard(item: item,isSelected: selectedId == item.id)
+                        CategoryCard(
+                            item: item,
+                            isSelected: selectedCategory == item.transactionCategory
+                        )
                         .onTapGesture {
                             withAnimation(.bouncy) {
-                                selectedId = item.id
-                                print("hi")
+                                selectedCategory = item.transactionCategory
                             }
                         }
                     }
-
                 }
 
                 .padding(.horizontal)
@@ -40,26 +40,33 @@ struct CategoriesRow: View {
 extension CategoryProgress {
     static let mockData: [CategoryProgress] = [
         CategoryProgress(
+            transactionCategory:.shopping,
             category: AppCategories.shopping,
             percentage: 1.13,
             percentageColor: .red
         ),
         CategoryProgress(
+       
+
+            transactionCategory:.food,
             category: AppCategories.food,
             percentage: 0.73,
             percentageColor: .teal600
         ),
         CategoryProgress(
+            transactionCategory:.transport,
             category: AppCategories.transport,
             percentage: 0.63,
             percentageColor: .teal600
         ),
         CategoryProgress(
+            transactionCategory: .bills,
             category: AppCategories.bills,
             percentage: 0.73,
             percentageColor: .teal600
         ),
         CategoryProgress(
+            transactionCategory: .health,
             category: AppCategories.health,
             percentage: 0.60,
             percentageColor: .teal600

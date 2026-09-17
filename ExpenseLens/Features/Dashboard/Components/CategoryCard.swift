@@ -40,19 +40,19 @@ struct CategoryCard: View {
     }
 }
 
-#Preview {
-    CategoryCard(
-        item: CategoryProgress(
-            category: CategoryItem(
-                iconName: "basket",
-                title: "Shopping",
-                titleColor: .pinkForeground,
-                iconBackgroundColor: .pinkBackground,
-                foregroundColor: .pinkForeground
-            ),
-            percentage: 1.0,
-            percentageColor: .pinkForeground
-        ),
-        isSelected: false
-    )
-}
+//#Preview {
+//    CategoryCard(
+//        item: CategoryProgress(
+//            category: CategoryItem(
+//                iconName: "basket",
+//                title: "Shopping",
+//                titleColor: .pinkForeground,
+//                iconBackgroundColor: .pinkBackground,
+//                foregroundColor: .pinkForeground
+//            ),
+//            percentage: 1.0,
+//            percentageColor: .pinkForeground
+//        ),
+//        isSelected: false
+//    )
+

@@ -39,4 +39,26 @@ enum TransactionAnalytics {
             )
         }
     }
+    
+    static func categoryPercentages(
+        from transactions: [Transaction]
+    ) -> [TransactionCategory: Double] {
+
+        let expensesByCategory = expensesByCategory(from: transactions)
+        let totalExpenses = monthlyExpenses(from: transactions)
+
+        return TransactionCategory.allCases.reduce(into: [:]) { result, category in
+
+            let amount = expensesByCategory[category] ?? 0
+
+            let percentage =
+                totalExpenses > 0
+                ? NSDecimalNumber(
+                    decimal: amount / totalExpenses
+                ).doubleValue
+                : 0
+
+            result[category] = percentage
+        }
+    }
 }

@@ -76,6 +76,7 @@ final class DashboardViewModel {
                 : 0
 
             return CategoryProgress(
+                transactionCategory: category,
                 category: category.categoryItem,
                 percentage: percentage,
                 percentageColor: category.iconColor
