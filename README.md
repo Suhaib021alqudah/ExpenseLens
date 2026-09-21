@@ -14,6 +14,16 @@
 |---|---|
 |  <img src="ExpenseLens/Resources/App Screenshots/HomeLightEn.png" width="400"> | <img src="ExpenseLens/Resources/App Screenshots/HomeDarkAr.png" width="400">  | 
 
+| **Reports View**| **Reports Dark (AR)**| 
+|  <img src="" width="400"> | <img src="">  | 
+
+| **Budget View**| **Budegt Dark (AR)**| 
+|  <img src="" width="400"> | <img src="">  | 
+
+| **Settings View**| **Settings Dark (AR)**| 
+|  <img src="" width="400"> | <img src="">  | 
+
+
 ## ✨ Features
 
 - 📊 Real-time budget tracking with visual progress indicators
