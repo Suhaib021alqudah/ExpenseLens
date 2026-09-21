@@ -10,9 +10,9 @@
 
 ## 📱 Screenshots
 
-| Dashboard | Category Breakdown | Budget Settings |
-|---|---|---|
-|  <img src="ExpenseLens/Resources/App Screenshots/HomeLightEn.png" width="400"> | _screenshot_ | _screenshot_ |
+| Home Light| Home Dark (AR) | 
+|---|---|
+|  <img src="ExpenseLens/Resources/App Screenshots/HomeLightEn.png" width="400"> | <img src="ExpenseLens/Resources/App Screenshots/HomeDarkAr.png" width="400">  | 
 
 ## ✨ Features
 
