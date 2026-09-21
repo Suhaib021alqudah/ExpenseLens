@@ -12,7 +12,7 @@
 
 | Dashboard | Category Breakdown | Budget Settings |
 |---|---|---|
-| _screenshot_ | _screenshot_ | _screenshot_ |
+| ExpenseLens/Resources/App Screenshots/HomeLightEn.png | _screenshot_ | _screenshot_ |
 
 ## ✨ Features
 
