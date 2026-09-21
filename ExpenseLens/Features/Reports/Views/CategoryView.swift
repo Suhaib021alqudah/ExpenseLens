@@ -18,8 +18,7 @@ struct CategoryView: View {
 
     @State private var selected: Double?
     @State private var selectedCategory: TransactionCategory? = nil
-    @State private var transaction: Bool = false
-    @State private var isSelected: Bool = false
+   
 
     //MARK: - Body
 
@@ -89,7 +88,7 @@ struct CategoryView: View {
         guard let selectedCategory else { return 0 }
 
         return categoryProgressList.first {
-            $0.category.id == selectedCategory.categoryItem.id
+            $0.transactionCategory == selectedCategory
         }?.percentage ?? 0
     }
 
