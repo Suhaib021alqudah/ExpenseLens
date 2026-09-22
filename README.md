@@ -112,4 +112,3 @@ ExpenseLens/
 ## 👤 Author
 
 Suhaib — iOS Developer
-[LinkedIn] · [Portfolio]
