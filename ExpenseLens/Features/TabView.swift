@@ -20,6 +20,7 @@ struct TabView: View {
                 BudgetView()
             }
             Tab(.settings, systemImage: "gear") {
+                SettingsView()
             }
         }
     }
