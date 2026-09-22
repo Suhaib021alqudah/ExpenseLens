@@ -15,7 +15,7 @@
 |  <img src="ExpenseLens/Resources/App Screenshots/HomeLightEn.png" width="400"> | <img src="ExpenseLens/Resources/App Screenshots/HomeDarkAr.png" width="400">  | 
 
 | **Category View**| **Category Dark (AR)**| 
-|  <img src="ExpenseLens/Resources/App Screenshots/CategoryViewLigh.png" width="400"> | <img src="ExpenseLens/Resources/App Screenshots/CategoryDark.png">  | 
+|  <img src="ExpenseLens/Resources/App Screenshots/CategoryViewLigh.png" width="400"> | <img src="ExpenseLens/Resources/App Screenshots/CategoryDark.png" width="400">  | 
 
 | **Budget View**| **Budegt Dark (AR)**| 
 |  <img src="" width="400"> | <img src="">  | 
