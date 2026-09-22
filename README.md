@@ -16,7 +16,7 @@
 
 | **Category View**| **Category Dark (AR)**| 
 |---|---|
-|  <img src="ExpenseLens/Resources/App Screenshots/CategoryViewLigh.png" width="400"> | <img src="ExpenseLens/Resources/App Screenshots/CategoryDark.png" width="400">  | 
+|  <img src="ExpenseLens/Resources/App Screenshots/CategoryViewLigh.png" width="400"> | <img src="ExpenseLens/Resources/App Screenshots/CategoryDarkAR.png" width="400">  | 
 
 | **Budget View**| **Budegt Dark (AR)**| 
 |  <img src="" width="400"> | <img src="">  | 
