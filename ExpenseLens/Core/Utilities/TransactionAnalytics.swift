@@ -9,25 +9,12 @@ import Foundation
 
 enum TransactionAnalytics {
 
+    //Filtring the transactions here we just need the expense and removing the Income transactionse
     static func expenses(from transactions: [Transaction]) -> [Transaction] {
         transactions.filter { $0.type == .expense }
     }
 
-    static func monthlyExpenses(from transactions: [Transaction]) -> Decimal {
-        expenses(from: transactions).reduce(0) { $0 + $1.amount }
-    }
-
-    static func expensesByCategory(from transactions: [Transaction])
-        -> [TransactionCategory: Decimal]
-    {
-        let expenseTransactions = expenses(from: transactions)
-
-        return Dictionary(grouping: expenseTransactions, by: \.category)
-            .mapValues { transactions in
-                transactions.reduce(0) { $0 + $1.amount }
-            }
-    }
-
+    //Filtering transcations by month
     static func transactions(from transactions: [Transaction], for date: Date)
         -> [Transaction]
     {
@@ -39,7 +26,26 @@ enum TransactionAnalytics {
             )
         }
     }
+
     
+    //Calculate the expenses in specific month using transactions() function
+    static func monthlyExpenses(from transactions: [Transaction]) -> Decimal {
+        expenses(from: transactions).reduce(0) { $0 + $1.amount }
+    }
+
+    //Group the transactionds using the Dictionary
+    static func expensesByCategory(from transactions: [Transaction])
+        -> [TransactionCategory: Decimal]
+    {
+        let expenseTransactions = expenses(from: transactions)
+
+        return Dictionary(grouping: expenseTransactions, by: \.category)
+            .mapValues { transactions in
+                transactions.reduce(0) { $0 + $1.amount }
+            }
+    }
+    
+
     static func categoryPercentages(
         from transactions: [Transaction]
     ) -> [TransactionCategory: Double] {
@@ -47,7 +53,9 @@ enum TransactionAnalytics {
         let expensesByCategory = expensesByCategory(from: transactions)
         let totalExpenses = monthlyExpenses(from: transactions)
 
-        return TransactionCategory.allCases.reduce(into: [:]) { result, category in
+        return TransactionCategory.allCases.reduce(into: [:]) {
+            result,
+            category in
 
             let amount = expensesByCategory[category] ?? 0
 

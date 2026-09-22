@@ -12,9 +12,9 @@ struct ReportsView: View {
     @State private var selection = 0
 
     init() {
-        _viewModel = State(
-            initialValue: ReportsViewModel(repository: FakeFinanceRepository())
-        )
+        _viewModel = State(initialValue: ReportsViewModel(
+            repository: AppDependencies.shared.financeRepository
+        ))
     }
 
     var body: some View {

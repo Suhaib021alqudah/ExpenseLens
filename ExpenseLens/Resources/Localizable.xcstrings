@@ -191,6 +191,9 @@
         }
       }
     },
+    "History" : {
+
+    },
     "home" : {
       "extractionState" : "manual",
       "localizations" : {

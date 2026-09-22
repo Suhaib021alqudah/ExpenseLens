@@ -6,3 +6,16 @@
 //
 
 import Foundation
+
+@MainActor
+
+final class AppDependencies {
+    
+    static let shared = AppDependencies()
+    let financeRepository : FinanceRepository
+    
+    private init() {
+        self.financeRepository = FakeFinanceRepository()
+    }
+    
+}

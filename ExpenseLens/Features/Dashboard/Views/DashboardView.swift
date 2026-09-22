@@ -12,13 +12,13 @@ struct DashboardView: View {
     //MARK: - Properties
 
     @State private var viewModel: DashboardViewModel
-    init()
-    {
-        _viewModel = State(initialValue: DashboardViewModel(repository: FakeFinanceRepository()))
+    init() {
+        _viewModel = State(initialValue: DashboardViewModel(
+            repository: AppDependencies.shared.financeRepository as! FakeFinanceRepository
+        ))
     }
     
     
-   @State private var selectedDate = Date()
     
     
     

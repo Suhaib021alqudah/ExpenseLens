@@ -64,9 +64,7 @@ struct CategorySpendingRow: View {
         }
         .padding(.vertical, 12)
         .padding(.horizontal, 14)
-        .background(
-          
-        )
+       
     }
 }
 
