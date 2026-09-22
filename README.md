@@ -18,6 +18,10 @@
 |---|---|
 |  <img src="ExpenseLens/Resources/App Screenshots/CategoryViewLigh.png" width="400"> | <img src="ExpenseLens/Resources/App Screenshots/CategoryDarkAR.png" width="400">  | 
 
+| **Monthly View**| **Monthly Dark (AR)**| 
+|---|---|
+|  <img src="" width="400"> | <img src="">  | 
+
 | **Budget View**| **Budegt Dark (AR)**| 
 |---|---|
 |  <img src="" width="400"> | <img src="">  | 
