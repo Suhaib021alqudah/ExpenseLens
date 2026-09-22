@@ -628,6 +628,12 @@
     "switchlanguagetext" : {
       "extractionState" : "manual",
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "التبديل بين العربية والإنجليزية"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
