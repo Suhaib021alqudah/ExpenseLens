@@ -24,7 +24,7 @@
 
 | **Settings View**| **Settings Dark (AR)**| 
 |---|---|
-|  <img src="ExpenseLens/Resources/App Screenshots/SettingsViewLight.png" width="400"> | <img src="ExpenseLens/Resources/App Screenshots/SettingsDarkAR.png">  | 
+|  <img src="ExpenseLens/Resources/App Screenshots/SettingsViewLight.png" width="400"> |  <img src="ExpenseLens/Resources/App Screenshots/SettingsDarkAR.png" width="400"> | 
 
 
 ## ✨ Features
