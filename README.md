@@ -19,10 +19,12 @@
 |  <img src="ExpenseLens/Resources/App Screenshots/CategoryViewLigh.png" width="400"> | <img src="ExpenseLens/Resources/App Screenshots/CategoryDarkAR.png" width="400">  | 
 
 | **Budget View**| **Budegt Dark (AR)**| 
+|---|---|
 |  <img src="" width="400"> | <img src="">  | 
 
 | **Settings View**| **Settings Dark (AR)**| 
-|  <img src="" width="400"> | <img src="">  | 
+|---|---|
+|  <img src="ExpenseLens/Resources/App Screenshots/SettingsViewLight.png" width="400"> | <img src="ExpenseLens/Resources/App Screenshots/SettingsDarkAR.png">  | 
 
 
 ## ✨ Features
