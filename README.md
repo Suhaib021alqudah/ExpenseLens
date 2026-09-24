@@ -1,4 +1,4 @@
-```
+
 # ExpenseLens (On Progress)💰
 
 > A smart, offline-first expense tracker built with SwiftUI — designed to make budgeting effortless, not tedious.
@@ -113,4 +113,4 @@ ExpenseLens/
 ## 👤 Author
 
 Suhaib — iOS Developer
-```
+
