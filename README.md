@@ -80,7 +80,7 @@ View → ViewModel → Repository (protocol) → SwiftData
 - **Localization**: String Catalogs (.xcstrings)
 
 ## 📂 Project Structure
-
+```
 ExpenseLens/
 ├── App/
 ├── Core/
@@ -95,7 +95,7 @@ ExpenseLens/
 │ ├── Reports/
 ├── Resources/
 └── Tests/
-
+```
 
 ## 🚀 Getting Started
 
