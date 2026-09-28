@@ -23,9 +23,9 @@
 |---|---|
 |  <img src="" width="400"> | <img src="">  | 
 
-| **Budget View**| **Budegt Dark (AR)**| 
+| **Transaction Details View**| **Transaction Details Dark (AR)**| 
 |---|---|
-|  <img src="" width="400"> | <img src="">  | 
+|  <img src="ExpenseLens/Resources/App Screenshots/TransactionDetails.png" width="400"> | <img src="ExpenseLens/Resources/App Screenshots/TransactionDetailsAR.png" width="400">  | 
 
 | **Settings View**| **Settings Dark (AR)**| 
 |---|---|
