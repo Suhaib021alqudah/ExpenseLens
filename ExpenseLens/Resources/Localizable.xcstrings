@@ -221,6 +221,9 @@
         }
       }
     },
+    "Date" : {
+
+    },
     "Education" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -455,6 +458,9 @@
         }
       }
     },
+    "Note" : {
+
+    },
     "of $%lld budget" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -638,6 +644,23 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Switch between English and Arabic"
+          }
+        }
+      }
+    },
+    "transactionDetails" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "تفاصيل العملية"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Transaction Deatils"
           }
         }
       }

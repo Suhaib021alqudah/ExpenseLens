@@ -13,21 +13,20 @@ struct DashboardView: View {
 
     @State private var viewModel: DashboardViewModel
     init() {
-        _viewModel = State(initialValue: DashboardViewModel(
-            repository: AppDependencies.shared.financeRepository as! FakeFinanceRepository
-        ))
+        _viewModel = State(
+            initialValue: DashboardViewModel(
+                repository: AppDependencies.shared.financeRepository
+                    as! FakeFinanceRepository
+            )
+        )
     }
-    
-    
-    
-    
-    
-//MARK: - Body
+
+    //MARK: - Body
 
     var body: some View {
-        
+
         //MARK: Local Binding
-        
+
         /*
          Local bindable lets us create bindings like $viewModel.selectedDate.
 
@@ -36,15 +35,15 @@ struct DashboardView: View {
          @Bindable does NOT create another ViewModel.
          It wraps the same observable object so we can create two-way bindings
          to its properties, such as selectedDate.
-         
+
          viewModel.selectedDate
          // value
 
          $viewModel.selectedDate
          // binding to that value
-         
+
         */
-        
+
         @Bindable var viewModel = viewModel
 
         NavigationStack {
@@ -61,15 +60,15 @@ struct DashboardView: View {
 
                     }
                     .frame(maxWidth: .infinity, alignment: .leading)
-                    .padding(.horizontal, 10)
+                    .padding(.horizontal, 20)
                     .padding(.top, 10)
 
                 }
-                .task {viewModel.loadTransactions()}
+                .task { viewModel.loadTransactions() }
                 .scrollIndicators(.hidden)
 
                 addTransactionButton
-                
+
             }
 
         }
@@ -153,8 +152,13 @@ extension DashboardView {
                         .top,
                         10
                     )
-                Text(.of$Budget(NSDecimalNumber(decimal: viewModel.monthlyBudget).intValue))
-                
+                Text(
+                    .of$Budget(
+                        NSDecimalNumber(decimal: viewModel.monthlyBudget)
+                            .intValue
+                    )
+                )
+
                 BudgetProgressBar(progress: viewModel.budgetProgress)
                     .frame(width: 152)
                 Text(
@@ -187,8 +191,7 @@ extension DashboardView {
                     .font(AppTypography.sectionLabel)
                     .foregroundStyle(.textSecondary)
                 Spacer()
-               
-                    
+
             }.padding(.top, 32)
             CategoriesRow(
 
@@ -208,22 +211,28 @@ extension DashboardView {
                     .font(AppTypography.sectionLabel)
                     .foregroundStyle(.textSecondary)
                 Spacer()
-                
+
             }.padding(.vertical, 10)
 
             List {
                 ForEach(viewModel.filteredTransactions) { transaction in
-                    TransactionRow(transaction: transaction)
-                        .listRowBackground(Color(.whiteBackground))
+                    NavigationLink(
+                        destination: TransactionDetailsView(
+                            transaction: transaction
+                        )
+                    ) {
+                        TransactionRow(transaction: transaction)
+                    }
                 }
-
+                .listRowBackground(Color(.whiteBackground))
             }
-            .scrollDisabled(true)
-            .scrollIndicators(.hidden)
-            .frame(height: 392)
-            .listStyle(.plain)
-            .clipShape(RoundedRectangle(cornerRadius: 20))
+
         }
+        .scrollDisabled(true)
+        .scrollIndicators(.hidden)
+        .frame(height: 392)
+        .listStyle(.plain)
+        .clipShape(RoundedRectangle(cornerRadius: 20))
     }
 }
 
@@ -235,14 +244,16 @@ extension DashboardView {
             AddTransactionView()
         } label: {
             Image(systemName: "plus")
-            .font(.system(size: 22, weight: .bold))
-            .foregroundStyle(.white)
+                .font(.system(size: 22, weight: .bold))
+                .foregroundStyle(.white)
 
         }
         .frame(width: 54, height: 54)
-        .background(RoundedRectangle(cornerRadius: 50).fill(LinearGradient.appIcon))
+        .background(
+            RoundedRectangle(cornerRadius: 50).fill(LinearGradient.appIcon)
+        )
         .buttonStyle(.plain)
         .padding()
-        
+
     }
 }

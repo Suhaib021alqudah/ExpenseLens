@@ -39,7 +39,7 @@ struct ReportsView: View {
                 }
                 Spacer()
 
-            }.padding(.horizontal, 10)
+            }.padding(.horizontal, 20)
 
         }.task {
             viewModel.loadTransactions()

@@ -9,7 +9,9 @@ import SwiftUI
 
 struct SettingsView: View {
     @State private var isDarkModeEnabled: Bool = false
-    @State private var switchLanguage   : Bool = false
+    @State private var isSwitchLanguagePressed: Bool = false
+
+//    @State private var languagManager = LanguageManager()
 
     var body: some View {
         ZStack(alignment: .leading) {
@@ -18,21 +20,24 @@ struct SettingsView: View {
 
                 Text(.settings)
                     .font(AppTypography.pageTitle)
-                
+
                 Text(.appearance)
                     .font(AppTypography.sectionLabel)
                     .foregroundStyle(.textSecondary)
                     .padding(.top, 10)
                 VStack(alignment: .leading) {
-                   
+                    //MARK: - Change the Theme Row
+
                     HStack {
-                        Image(systemName: "sparkles").foregroundStyle(.navyForeground)
-                            .frame(width: 40, height: 40)
-                            .background(
-                                RoundedRectangle(cornerRadius: 16).fill(
-                                    .navyBackround
-                                )
+                        Image(systemName: "sparkles").foregroundStyle(
+                            .navyForeground
+                        )
+                        .frame(width: 40, height: 40)
+                        .background(
+                            RoundedRectangle(cornerRadius: 16).fill(
+                                .navyBackround
                             )
+                        )
 
                         VStack(alignment: .leading) {
                             Text(.darkmode).font(AppTypography.rowLabel)
@@ -42,13 +47,12 @@ struct SettingsView: View {
                         }
                         Spacer()
 
-                        Toggle("", isOn: $isDarkModeEnabled).labelsHidden()
-                        
-                 
+                        Toggle("", isOn: $isDarkModeEnabled).tint(.teal700).labelsHidden()
+
                     }.padding(.vertical)
+
+                    //MARK: - Change the Language Row
                     
-                 
-                    Divider()
                     HStack {
                         Image(systemName: "globe")
                             .frame(width: 40, height: 40)
@@ -58,7 +62,7 @@ struct SettingsView: View {
                                     .purpleBackground
                                 )
                             )
-                        
+
                         VStack(alignment: .leading) {
                             Text(.arabic).font(AppTypography.rowLabel)
                             Text(.switchlanguagetext).font(
@@ -67,10 +71,11 @@ struct SettingsView: View {
                         }
                         Spacer()
                         
-                        Toggle("", isOn: $switchLanguage).labelsHidden()
+                        //MARK: - Language Switcher
+                        Toggle("", isOn: $isSwitchLanguagePressed).tint(.teal700).labelsHidden()
                     }.padding(.vertical)
-                    
-                }.padding(.horizontal,20).padding(.vertical,10).background(
+
+                }.padding(.horizontal, 20).padding(.vertical, 10).background(
                     RoundedRectangle(cornerRadius: 16).fill(
                         .whiteBackground
                     )
